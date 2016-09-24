@@ -1,4 +1,10 @@
 language: cpp
-compiler:
-  - clang
-  - gcc
+ 
+branches:
+  only:
+   - catchmoci
+ 
+before_script: ls
+ 
+script:
+  - make -C Build
