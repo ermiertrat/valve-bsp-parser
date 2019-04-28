@@ -21,7 +21,7 @@ bool BSPFile::parse( const std::string& bsp_directory, const std::string& bsp_fi
     m_FileName = bsp_file;
     try {
         /// parse the bsp header
-        bsp_binary.read( reinterpret_cast< char* >( &m_BSPHeader ), sizeof dheader_t );
+        bsp_binary.read( reinterpret_cast< char* >( &m_BSPHeader ), sizeof (dheader_t) );
 
         /// check bsp version/ident
         if( m_BSPHeader.m_Version < BSPVERSION ) {

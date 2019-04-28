@@ -1,4 +1,5 @@
 #include "TraceRay.hpp"
+#include <float.h>
 using namespace Valve;
 using namespace BSP;
 
@@ -20,7 +21,7 @@ void TraceRay::ray_cast( const Vector3& origin, const Vector3& final, BSPFile* p
         return;
     }
 
-    memset( pTrace, 0, sizeof trace_t );
+    memset( pTrace, 0, sizeof (trace_t) );
     pTrace->m_Fraction          = 1.0f;
     pTrace->m_FractionLeftSolid = 0.f;
     ray_cast_node( pBSPFile, 0, 0.f, 1.f, origin, final, pTrace );

@@ -7,6 +7,7 @@
  */
 #pragma once
 #include <stdint.h>
+#include <stddef.h>
 
 namespace Valve { namespace BSP {
 #define IDBSPHEADER	( ( 'P' << 24 ) + ( 'S' << 16 ) + ( 'B' << 8 ) + 'V' )

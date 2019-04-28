@@ -15,6 +15,9 @@
 
 #include <array>
 #include <string>
+#include <ostream>
+#include <algorithm>
+#include <cmath>
 
 template < typename T, size_t T_Rows, size_t T_Cols >
 class Matrix
@@ -75,7 +78,7 @@ public:
 
     bool empty( void ) const
     {
-        return all_of( m_cValues.begin(), m_cValues.end(), []( T i )
+        return std::all_of( m_cValues.begin(), m_cValues.end(), []( T i )
         {
             return i == static_cast< T >( 0 );
         } );
@@ -272,7 +275,7 @@ public:
         for( auto v : m_cValues )
             buf += ( v * v );
 
-        return sqrt( buf );
+        return std::sqrt( buf );
     }
 
     void normalize( void )
