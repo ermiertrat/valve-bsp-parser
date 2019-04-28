@@ -143,7 +143,7 @@ namespace Valve {
     void BSPFile::parse_lump_data( std::ifstream& bsp_binary, const BSP::eLumpIndex lump_index, std::vector< T >& buffer ) const
     {
         auto& lump = m_BSPHeader.m_Lumps.at( static_cast< size_t >( lump_index ) );
-        const auto lump_size = lump.m_Filelen / sizeof T;
+        const auto lump_size = lump.m_Filelen / sizeof (T);
         if( !lump_size ) {
             return;
         }
@@ -151,6 +151,6 @@ namespace Valve {
         buffer = std::vector< T >( lump_size );
 
         bsp_binary.seekg( lump.m_Fileofs );
-        bsp_binary.read( reinterpret_cast< char* >( buffer.data() ), lump_size * sizeof T );
+        bsp_binary.read( reinterpret_cast< char* >( buffer.data() ), lump_size * sizeof (T) );
     }
 }
